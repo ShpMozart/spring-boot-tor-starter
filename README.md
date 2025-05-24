@@ -49,7 +49,7 @@ mvn install:install-file \
   -Dfile=target/spring-boot-tor-starter-1.0.0.jar \
   -DgroupId=com.mozart \
   -DartifactId=spring-boot-tor-starter \
-  -Dversion=1.0.0 \
+  -Dversion=1.0 \
   -Dpackaging=jar
 ```
 
