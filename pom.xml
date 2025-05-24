@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.mozart</groupId>
+  <artifactId>spring-boot-tor-starter</artifactId>
+  <version>1.0</version>
+
+  <name>spring-boot-tor-starter</name>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.0</version>
+    <relativePath/>
+  </parent>
+  <properties>
+    <java.version>17</java.version>
+    <tor.version>0.4.8.12</tor.version>
+  </properties>
+
+
+  <dependencies>
+    <!-- Spring Boot Starter -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
+      <optional>true</optional>
+
+    </dependency>
+
+    <!-- Utilities -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
+
+    <!-- For testing -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <!-- غیرفعال کردن پلاگین spring-boot-maven-plugin برای پروژه‌های کتابخانه‌ای -->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <skip>true</skip> <!-- این خط مشکل را حل می‌کند -->
+        </configuration>
+      </plugin>
+
+      <!-- پلاگین‌های دیگر -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- اضافه کردن این بخش برای تعریف نوع packaging به عنوان کتابخانه -->
+  <packaging>jar</packaging>
+</project>
