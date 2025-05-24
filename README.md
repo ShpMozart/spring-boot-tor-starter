@@ -11,20 +11,43 @@
 ## 🚀 What is it?
 
 **Spring Boot Tor Starter** is an auto-configuration library that:
+
 - Automatically generates the `torrc` configuration file
 - Creates a Tor hidden service directory (with proper permissions)
 - Starts the Tor process in the background
 - Reads and exposes the generated `.onion` address from the `hostname` file
 
-No need to manually edit `torrc`, configure ports, or handle service directories. Just include the dependency and enable Tor in your properties.
+No need to manually edit `torrc`, configure ports, or handle service directories.  
+Just include the dependency and enable Tor in your `application.properties`.
 
 ---
 
-## 🧠 Why would I use this?
+## 🔒 Use Cases
 
-This starter is ideal for:
-- **Anonymous deployments** on the dark web (e.g. private APIs, dashboards, chat systems)
-- Building **privacy-focused** services with Spring Boot
-- Educational purposes: learning how Tor and hidden services work in Java
+- Anonymous deployments on the **dark web**
+- Privacy-focused APIs and dashboards
+- Educational purposes — learning how Tor + Java work together
 
+---
 
+## ⚙️ Requirements
+
+- Java 17+
+- Spring Boot 3.x
+- ✅ **Tor must be installed on your system** and accessible via `tor` command
+
+You can install Tor from [https://www.torproject.org/download/](https://www.torproject.org/download/)
+
+---
+
+## 📦 How to install locally
+
+Until the library is published to Maven Central, install it manually in your local Maven repo:
+
+```bash
+mvn install:install-file \
+  -Dfile=target/spring-boot-tor-starter-1.0.0.jar \
+  -DgroupId=com.mozart \
+  -DartifactId=spring-boot-tor-starter \
+  -Dversion=1.0.0 \
+  -Dpackaging=jar
