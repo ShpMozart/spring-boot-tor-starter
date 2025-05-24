@@ -51,3 +51,14 @@ mvn install:install-file \
   -DartifactId=spring-boot-tor-starter \
   -Dversion=1.0.0 \
   -Dpackaging=jar
+```
+
+then add it to pom.xml 
+```xml
+<dependency>
+  <groupId>com.mozart</groupId>
+  <artifactId>spring-boot-tor-starter</artifactId>
+  <version>1.0</version>
+</dependency>
+```
+
